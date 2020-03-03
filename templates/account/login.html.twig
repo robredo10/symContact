@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-12'>
+            <h1>Se connecter</h1>
+            {% if hasError %}
+                <div class='alert alert-danger'>
+                    Mauvais login ou password...
+                </div>
+            {% endif %}
+
+            <form action="{{path('account_login')}}" method='post'>
+                <input type='text' name='_username' value='{{username}}'>
+                <input type='password' name='_password'>
+                <button type='submit'>Se Connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

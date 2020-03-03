@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Titi{% endblock %}
+
+{% block body %}
+    <h1>Create new Titi</h1>
+
+    {{ include('titi/_form.html.twig') }}
+
+    <a href="{{ path('titi_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes contacts{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                <table>
+                    <tr>
+                        <th>Nom / Prénom</th>
+                        <th>Voir</th>
+                        <th>Editer</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    {% for contact in contacts %}
+                        <tr>
+                            <td>{{contact.nom}} {{contact.prenom}}</td>
+                            <td><a href='{{path('contact_view', {id: contact.id})}}'>voir</a></td>
+                            <td><a href='{{path('contact_edit', {id: contact.id})}}'>editer</a></td>
+                            <td><a href='{{path('contact_delete', {id: contact.id})}}'>supprimer</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

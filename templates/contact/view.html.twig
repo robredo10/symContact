@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche contact {{contact.prenom}} {{contact.nom}}{% endblock %}
+
+{% block body %}
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-12'>
+            <h1>Fiche contact {{contact.prenom}} {{contact.nom}}</h1>
+           <p>E-mail : {{contact.email}} </p>
+           <p>Domicile : {{contact.domicile}} </p>
+           <p>Mobile : {{contact.mobile}} </p>
+           <p>Bureau : {{contact.bureau}} </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

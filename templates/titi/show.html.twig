@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Titi{% endblock %}
+
+{% block body %}
+    <h1>Titi</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ titi.id }}</td>
+            </tr>
+            <tr>
+                <th>Test</th>
+                <td>{{ titi.test }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('titi_index') }}">back to list</a>
+
+    <a href="{{ path('titi_edit', {'id': titi.id}) }}">edit</a>
+
+    {{ include('titi/_delete_form.html.twig') }}
+{% endblock %}

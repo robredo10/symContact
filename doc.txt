@@ -1,0 +1,54 @@
+I - installer un nouveau projet symfony avec composer :
+composer create-project symfony/website-skeleton symcontact
+
+Cette commande crée le dossier symcontact et y télécharge les éléments nécessaires à al construction d'un site we complet.
+
+Se rendre dans le dossier créé
+
+II - Lancer le serveur web et le serveur de BDD :
+- Pour la BDD : Lancer WAMP
+- Pour le serveur web, écécuter la commande
+symfony serve
+
+III - Configurer et créer la BDD :
+Editer le fichier .env pour configurer la BDD.
+Par exemple : DATABASE_URL=mysql://root:@127.0.0.1:3306/symcontact?serverVersion=5.7
+
+Exécuter la commande :
+symfony console doctrine:database:create
+
+IV - Création du controller HomeController :
+symfony console make:controller HomeController
+
+V - Edition de templates/base.html.twig pour ajouter les css et js bootstrap + une navbar
+
+VI - Modification de la vue home/index.html.twig pour afffichage du message d'accueil
+
+VII - Création d'une entité User avec email, firstName, lastName, hash
+
+commande : 
+symfony console make:entity User
+
+VIII - Créer une migration
+
+commande : symfony console make:migration
+
+IX - Lancer la migration
+
+commande : symfony console doctrine:migrations:migrate
+
+X - Configuration de la sécurité :
+cf : config/packages/security.yaml
+
+XI - Creation du controller AccountController
+commande : symfony console make:controller AccountController
+
+creation des 2 methode login et logout (cf security.yaml pour le nom des routes)
+
+XII - Creation d'un formaulaire de création d'un utilisateur :
+
+commande : symfony make:form RegistrationType
+
+
+
+

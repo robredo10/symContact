@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login admin !</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Admin - Se connecter</h1>
+                {% if hasError %}
+                <div class="alert alert-danger">
+                    Mauvais login ou password
+                </div>
+                {% endif %}
+
+                <form method="post">
+                    <input type="text" name="username" value="{{username}}">
+                    <input type="password" name="_password">
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Titi{% endblock %}
+
+{% block body %}
+    <h1>Edit Titi</h1>
+
+    {{ include('titi/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('titi_index') }}">back to list</a>
+
+    {{ include('titi/_delete_form.html.twig') }}
+{% endblock %}

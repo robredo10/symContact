@@ -1,0 +1,24 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Bienvenue dans l'interface d'admin</h1>
+
+            <p>Nombre d'utilisateurs inscrits : {{nbUsers}}</p>
+
+            <p>Nombre de contacts gérés : {{nbContacts}}</p>       
+
+            <p><strong>Utilisateurs les plus actifs :</strong></p> 
+
+            {% for activeUser in activeUsers %}
+                <p>{{activeUser.email}} ({{activeUser.contacts|length}})</p>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

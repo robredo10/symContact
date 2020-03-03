@@ -1,0 +1,40 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Tous les utilisateurs{% endblock %}
+
+{% block body %}
+<div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                <table>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nb de contacts</th>
+                        <th>Role</th>
+                        <th>Editer</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{user.email}}</td>
+                            <td>{{user.contacts|length}}</td>
+                            <td>
+                                {% for role in user.userRole%}
+                                    {{role.libelle}}
+                                {% else %}
+                                    utilisateur
+                                {% endfor %}
+                            </td>
+                            <td><a href='{{path('admin_users_edit', {'id' : user.id})}}'>editer</a></td>                            
+                            <td>
+                            {% if app.user != user %}
+                                <a href='{{path('admin_users_delete', {'id' : user.id})}}?token={{ csrf_token('delete-user') }}'>supprimer</a>
+                            {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
